@@ -29,11 +29,10 @@ void setup(){
 	noStroke();
   frameRate(120);
 	strokeCap(ROUND);
+  setupBrush();
 }
 
 void draw(){
-  if(tickBegin==0) return;
-
   float tick = frameCount - tickBegin;
   if(tick>4*60){
     setupBrush();
@@ -66,13 +65,6 @@ void draw(){
 
 int x_bef = 0;
 int y_bef = 0;
-void mouseDragged(){
-}
-
-void mouseClicked(){
-  setupBrush();
-}
-
 boolean is_enter = false;
 void setupBrush(){
   tickBegin = frameCount;
